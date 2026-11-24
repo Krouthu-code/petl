@@ -1,6 +1,7 @@
 from __future__ import absolute_import, print_function, division
 
 import pytest
+import petl as etl
 
 from petl.errors import FieldSelectionError
 from petl.test.failonerror import assert_failonerror
@@ -408,7 +409,7 @@ def test_roundvalues_rounds_numeric_values():
         [2, 8.766],
     ]
 
-    result = roundvalues(table, "price", 2)
+    result = etl.roundvalues(table, "price", 2)
 
     assert list(result) == [
         ("id", "price"),
